@@ -1,0 +1,35 @@
+CONTRATO DE LICENÇA DE USO - CONVERSOR TOTVS
+
+FA MARINGA LTDA ("Licenciante") concede ao usuário final ("Licenciado") 
+uma licença não exclusiva para usar o software Conversor TOTVS de acordo 
+com os seguintes termos:
+
+1. USO PERMITIDO
+   O Licenciado pode instalar e usar o Conversor TOTVS em um único computador
+   para o qual foi adquirida a licença.
+
+2. RESTRIÇÕES
+   - É proibida a distribuição não autorizada
+   - É proibida a engenharia reversa
+   - É proibida a modificação do software
+
+3. PROPRIEDADE INTELECTUAL
+   O software e todos os seus componentes são propriedade intelectual
+   da FA MARINGA LTDA.
+
+4. SUPORTE TÉCNICO
+   Suporte técnico disponível através do email: suporte@famaringa.com.br
+
+5. GARANTIA
+   O software é fornecido "como está" sem garantias adicionais.
+
+6. DURAÇÃO
+   Esta licença é válida por 1 (um) ano a partir da data de instalação,
+   podendo ser renovada.
+
+Ao instalar este software, o Licenciado concorda com todos os termos
+deste contrato.
+
+© 2024 FA MARINGA LTDA - Todos os direitos reservados.
+CNPJ: XX.XXX.XXX/XXXX-XX
+Endereço: Av. Principal, 1234 - Centro - Maringá/PR

@@ -1,0 +1,108 @@
+MANUAL DO USUÁRIO - CONVERSOR TOTVS
+==========================================
+
+ÍNDICE:
+1. INICIANDO O APLICATIVO
+2. LICENCIAMENTO
+3. INTERFACE PRINCIPAL
+4. CONVERTENDO ARQUIVOS
+5. CONFIGURAÇÕES
+6. SOLUÇÃO DE PROBLEMAS
+7. SUPORTE TÉCNICO
+
+1. INICIANDO O APLICATIVO
+--------------------------------
+- Execute o Conversor TOTVS pelo Menu Iniciar ou atalho na área de trabalho
+- A aplicação verificará automaticamente a licença ao iniciar
+- Aguarde a inicialização completa
+
+2. LICENCIAMENTO
+-----------------
+O Conversor TOTVS utiliza licenciamento por máquina:
+
+- A licença é válida para 1 ano
+- Cada computador requer uma licença separada
+- Para obter nova licença, contate o suporte técnico
+
+3. INTERFACE PRINCIPAL
+-----------------------
+A interface principal contém:
+
+ÁREA DE SELEÇÃO DE ARQUIVOS:
+- Campo para digitar caminho do arquivo
+- Botão "Selecionar arquivo" para buscar
+- Lista de arquivos para processamento em lote
+
+BOTÕES DE AÇÃO:
+- "Adicionar arquivos": Adiciona mais arquivos à lista
+- "Remover selecionados": Remove arquivos marcados
+- "Limpar lista": Remove todos os arquivos
+
+BOTÃO PRINCIPAL:
+- "Converter": Inicia o processo de conversão
+
+ÁREA DE STATUS:
+- Barra de progresso durante conversão
+- Informações sobre o processamento
+- Contador de arquivos processados
+
+4. CONVERTENDO ARQUIVOS
+-----------------------
+
+COMO CONVERTER:
+1. Selecione os arquivos TXT desejados
+2. Clique em "Converter"
+3. Escolha a pasta de destino
+4. Aguarde o processamento
+
+FORMATOS SUPORTADOS:
+- GERR004: Relatórios de estoque TOTVS
+- CDFR054: Relatórios financeiros TOTVS
+
+ARQUIVOS GERADOS:
+- Arquivos CSV com timestamp
+- Mesmo nome do arquivo original + data/hora
+- Colunas: seq, codigo_produto, descricao, codigo_barras, quantidade, valor_unitario, valor_total
+
+5. CONFIGURAÇÕES
+-----------------
+
+O aplicativo configura automaticamente:
+- Formatos de arquivo suportados
+- Codificação de entrada (Latin-1)
+- Codificação de saída (UTF-8)
+- Delimitador CSV (vírgula)
+
+6. SOLUÇÃO DE PROBLEMAS
+--------------------------
+
+ERRO COMUNS:
+- "Formato não compatível": Verifique se o arquivo é GERR004 ou CDFR054
+- "Arquivo não encontrado": Verifique o caminho do arquivo
+- "Erro de codificação": O arquivo deve estar em formato Latin-1
+
+SOLUÇÕES:
+- Verifique o formato do arquivo TXT
+- Certifique-se que o arquivo não está aberto por outro programa
+- Verifique as permissões da pasta de destino
+
+7. SUPORTE TÉCNICO
+-------------------
+
+PARA CONTATO:
+- Empresa: FA MARINGA LTDA
+- Email: suporte@famaringa.com.br
+- Telefone: (44) XXXX-XXXX
+- Site: www.famaringa.com.br
+
+INFORMAÇÕES TÉCNICAS:
+- Versão do aplicativo: Menu Ajuda → Sobre
+- ID da máquina: Para suporte técnico
+- Logs de erro: Na pasta de instalação
+
+HORÁRIO DE SUPORTE:
+- Segunda a Sexta: 8h às 18h
+- Sábado: 8h às 12h
+- Domingo e Feriados: Fechado
+
+© 2024 FA MARINGA LTDA - Todos os direitos reservados.
