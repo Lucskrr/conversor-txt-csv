@@ -7,7 +7,7 @@ import sys
 import os
 import threading
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import filedialog, messagebox
 from pathlib import Path
 
 # Add project root to path
@@ -255,7 +255,7 @@ class ConversorApp:
     
     def _select_single_file(self):
         """Handle single file selection"""
-        files = self.root.tk.filedialog.askopenfilenames(filetypes=self.config.get('FILE_FILTERS'))
+        files = filedialog.askopenfilenames(filetypes=self.config.get('FILE_FILTERS'))
         if files:
             # Set first file in selection field
             self.file_selection.set_file_path(files[0])
@@ -265,7 +265,7 @@ class ConversorApp:
     
     def _add_files(self):
         """Add multiple files to the list"""
-        files = self.root.tk.filedialog.askopenfilenames(filetypes=self.config.get('FILE_FILTERS'))
+        files = filedialog.askopenfilenames(filetypes=self.config.get('FILE_FILTERS'))
         for file_path in files:
             self.file_list.add_file(file_path)
     
@@ -313,7 +313,7 @@ class ConversorApp:
             return
         
         # Get output directory
-        output_dir = self.root.tk.filedialog.askdirectory(title="Selecione a pasta de saída")
+        output_dir = filedialog.askdirectory(title="Selecione a pasta de saída")
         if not output_dir:
             messagebox.showwarning("Aviso", self.config.get('ERROR_MESSAGES')['no_output_dir'])
             return

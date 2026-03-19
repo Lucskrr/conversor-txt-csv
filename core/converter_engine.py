@@ -144,7 +144,7 @@ class BatchConverter:
     
     def __init__(self):
         self.engine = ConversionEngine()
-        self.logger = app_logger
+        self.logger = get_logger(__name__)
     
     def convert_batch(self, files: List[str], output_dir: str, 
                      progress_callback: Optional[Callable] = None) -> List[Tuple[bool, str, str]]:

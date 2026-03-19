@@ -121,6 +121,23 @@ class ConfigService:
             return Path(sys.executable)
         else:
             return Path(__file__).parent.parent / 'main_app.py'
+    
+    # Convenience properties for backward compatibility
+    @property
+    def VERSION(self):
+        return self._config.get('VERSION', '1.1.0')
+    
+    @property
+    def APP_NAME(self):
+        return self._config.get('APP_NAME', 'Conversor TOTVS')
+    
+    @property
+    def APP_AUTHOR(self):
+        return self._config.get('APP_AUTHOR', 'Fa Maringa')
+    
+    @property
+    def COMPANY_NAME(self):
+        return self._config.get('COMPANY_NAME', 'FA MARINGA LTDA')
 
 
 # Global config service instance
