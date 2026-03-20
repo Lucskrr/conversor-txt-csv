@@ -2,11 +2,11 @@
 
 
 a = Analysis(
-    ['app\\main.py'],
+    ['converter.py'],
     pathex=[],
     binaries=[],
-    datas=[],
-    hiddenimports=[],
+    datas=[('logo.png', '.')],
+    hiddenimports=['tkinterdnd2', 'PIL', 'utils.logger', 'utils.config_service'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

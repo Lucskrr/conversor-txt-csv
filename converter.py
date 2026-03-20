@@ -8,6 +8,18 @@ import threading
 import base64
 from datetime import datetime
 
+# Importando sistema de logging profissional
+try:
+    from utils.logger import get_logger
+    from utils.config_service import get_config
+    LOGGER_AVAILABLE = True
+except ImportError:
+    LOGGER_AVAILABLE = False
+    def _write_log(msg):
+        log_file = os.path.join(os.path.dirname(__file__), 'converter.log')
+        with open(log_file, 'a', encoding='utf-8') as f:
+            f.write(f"{datetime.now().isoformat()} - {msg}\n")
+
 VERSION = '1.1.0'
 APP_NAME = 'Conversor TOTVS'
 APP_AUTHOR = 'Fa Maringa'
@@ -39,10 +51,16 @@ def _parse_number(num_str):
 FORMATOS_COMPATIVEIS = ['gerr004', 'cdfr054']
 
 
-def _write_log(msg):
-    log_file = os.path.join(os.path.dirname(__file__), 'converter.log')
-    with open(log_file, 'a', encoding='utf-8') as f:
-        f.write(f"{datetime.now().isoformat()} - {msg}\n")
+def _get_logger():
+    """Get logger instance with fallback"""
+    if LOGGER_AVAILABLE:
+        return get_logger('converter')
+    else:
+        class SimpleLogger:
+            def info(self, msg): _write_log(f"INFO - {msg}")
+            def error(self, msg): _write_log(f"ERROR - {msg}")
+            def warning(self, msg): _write_log(f"WARNING - {msg}")
+        return SimpleLogger()
 
 
 def _get_output_csv_path(arquivo_txt, pasta_saida):
@@ -298,11 +316,13 @@ def _converter_background(arquivos, pasta_saida):
 
         try:
             caminho_csv, formato, total, fallback = normalizar_txt_para_csv(arquivo, pasta_saida, progress_callback=update_progress)
-            _write_log(f"OK: {arquivo} -> {caminho_csv} | Formato: {formato} | Registros: {total}")
+            logger = _get_logger()
+            logger.log_conversion_success(arquivo, caminho_csv, formato, total)
             results.append((True, arquivo, caminho_csv, formato, total, fallback))
 
         except Exception as e:
-            _write_log(f"ERRO: {arquivo} | {str(e)}")
+            logger = _get_logger()
+            logger.log_conversion_error(arquivo, e)
             results.append((False, arquivo, str(e)))
 
     def finalize():
@@ -373,10 +393,12 @@ for candidate in LOGO_CANDIDATES:
     if os.path.isfile(logo_path):
         try:
             logo_image = tk.PhotoImage(file=logo_path)
-            _write_log(f"Logo carregado: {logo_path}")
+            logger = _get_logger()
+            logger.info(f"Logo carregado: {logo_path}")
         except Exception as e:
             logo_image = None
-            _write_log(f"Falha ao carregar {logo_path}: {e}")
+            logger = _get_logger()
+            logger.error(f"Falha ao carregar {logo_path}: {e}")
         break
 
 header_frame = tk.Frame(janela, padx=10, pady=10, relief='groove', bd=1, bg='#ECE9D8')
@@ -436,7 +458,8 @@ if DND_AVAILABLE:
         listbox_files.dnd_bind('<<Drop>>', _on_drop_files)
         dnd_enabled = True
     except Exception as e:
-        _write_log(f"DND falhou na lista: {e}")
+        logger = _get_logger()
+        logger.warning(f"DND falhou na lista: {e}")
 
 if not dnd_enabled:
     # Tentar o modo nativo TkDND se disponível
@@ -445,7 +468,8 @@ if not dnd_enabled:
         listbox_files.dnd_bind('<<Drop>>', _on_drop_files)
         dnd_enabled = True
     except Exception as e:
-        _write_log(f"DND nativo não disponível: {e}")
+        logger = _get_logger()
+        logger.warning(f"DND nativo não disponível: {e}")
 
 if dnd_enabled:
     label_drag.config(text='Solte os arquivos aqui', fg='darkgreen')

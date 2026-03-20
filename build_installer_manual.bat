@@ -4,49 +4,8 @@ echo Construtor de Instalador - Conversor TOTVS
 echo ========================================
 echo.
 
-REM Procurar Inno Setup em múltiplos locais
-echo [1/5] Procurando Inno Setup...
-set "INNO_PATH="
-
-REM Locais comuns de instalação
-for %%P in (
-    "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
-    "C:\Program Files\Inno Setup 6\ISCC.exe"
-    "C:\Program Files (x86)\Inno Setup 5\ISCC.exe"
-    "C:\Program Files\Inno Setup 5\ISCC.exe"
-    "C:\Users\Admin\AppData\Local\Programs\Inno Setup 6\ISCC.exe"
-    "C:\Users\Admin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Inno Setup 6\ISCC.exe"
-) do (
-    if exist %%P (
-        set "INNO_PATH=%%~P"
-        goto :found
-    )
-)
-
-REM Tentar encontrar no PATH
-for /f "tokens=*" %%i in ('where iscc.exe 2^>nul') do (
-    set "INNO_PATH=%%i"
-    goto :found
-)
-
-:found
-if "%INNO_PATH%"=="" (
-    echo ❌ Inno Setup não encontrado!
-    echo.
-    echo Por favor, instale o Inno Setup 6 em:
-    echo https://jrsoftware.org/isdl.php
-    echo.
-    echo Ou informe o caminho manualmente:
-    echo "C:\Caminho\Para\Inno Setup 6\iscc.exe" installer_script.iss
-    pause
-    exit /b 1
-)
-
-echo ✅ Inno Setup encontrado: %INNO_PATH%
-
 REM Verificar se o executável existe
-echo.
-echo [2/5] Verificando executável...
+echo [1/4] Verificando executável...
 if not exist "dist\ConversorTOTVS_v2.exe" (
     echo ❌ Executável não encontrado!
     echo Execute primeiro: python build_executable.py
@@ -57,7 +16,7 @@ echo ✅ Executável encontrado: dist\ConversorTOTVS_v2.exe
 
 REM Verificar arquivos necessários
 echo.
-echo [3/5] Verificando arquivos do instalador...
+echo [2/4] Verificando arquivos do instalador...
 if not exist "installer_script.iss" (
     echo ❌ Script do instalador não encontrado!
     pause
@@ -76,13 +35,32 @@ echo ✅ Arquivos verificados
 
 REM Criar diretório de saída
 echo.
-echo [4/5] Preparando diretório de saída...
+echo [3/4] Preparando diretório de saída...
 if not exist "instalador" mkdir instalador
 echo ✅ Diretório instalador criado
 
+REM Pedir caminho do Inno Setup
+echo.
+echo [4/4] Informe o caminho do Inno Setup
+echo.
+echo Exemplos comuns:
+echo - C:\Program Files (x86)\Inno Setup 6\iscc.exe
+echo - C:\Program Files\Inno Setup 6\iscc.exe
+echo - C:\Arquivos de Programas (x86)\Inno Setup 6\iscc.exe
+echo.
+set /p INNO_PATH="Digite o caminho completo do iscc.exe: "
+
+if not exist "%INNO_PATH%" (
+    echo ❌ Arquivo não encontrado: %INNO_PATH%
+    pause
+    exit /b 1
+)
+
+echo ✅ Inno Setup encontrado: %INNO_PATH%
+
 REM Compilar o instalador
 echo.
-echo [5/5] Compilando instalador...
+echo Compilando instalador...
 "%INNO_PATH%" "installer_script.iss"
 
 if %ERRORLEVEL% EQU 0 (

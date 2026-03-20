@@ -1,0 +1,55 @@
+2026-03-19T11:50:03.275491 - Logo inválido ou não suportado: 
+2026-03-19T11:51:50.478770 - OK: C:/Users/Admin/Desktop/cdfr054.P08.txt -> C:/Users/Admin/Desktop/Relatorios\cdfr054.P08_20260319_115150.csv | Formato: cdfr054 | Registros: 87
+2026-03-19T11:51:50.493234 - OK: C:/Users/Admin/Desktop/gerr004.P00 contagem.txt -> C:/Users/Admin/Desktop/Relatorios\gerr004.P00 contagem_20260319_115150.csv | Formato: gerr004 | Registros: 25
+2026-03-19T11:52:52.096338 - Logo inválido ou não suportado: 
+2026-03-19T11:57:26.428388 - Logo inválido ou não suportado: 
+2026-03-19T12:01:16.217064 - Logo inválido ou não suportado: 
+2026-03-19T12:01:52.342249 - OK: C:/Users/Admin/Desktop/cdfr054.P08.txt -> C:/Users/Admin/Desktop/Relatorios\cdfr054.P08_20260319_120152.csv | Formato: cdfr054 | Registros: 87
+2026-03-19T12:01:52.384159 - OK: C:/Users/Admin/Desktop/gerr004.P00 contagem.txt -> C:/Users/Admin/Desktop/Relatorios\gerr004.P00 contagem_20260319_120152.csv | Formato: gerr004 | Registros: 25
+2026-03-19T12:03:36.375608 - Logo inválido ou não suportado: 
+2026-03-19T12:04:06.230548 - OK: C:/Users/Admin/Desktop/cdfr054.P08.txt -> C:/Users/Admin/Desktop/Relatorios\cdfr054.P08_20260319_120406.csv | Formato: cdfr054 | Registros: 87
+2026-03-19T12:04:06.258985 - OK: C:/Users/Admin/Desktop/gerr004.P00 contagem.txt -> C:/Users/Admin/Desktop/Relatorios\gerr004.P00 contagem_20260319_120406.csv | Formato: gerr004 | Registros: 25
+2026-03-19T12:04:41.021851 - Logo inválido ou não suportado: 
+2026-03-19T12:07:14.055310 - Logo inválido ou não suportado: 
+2026-03-19T12:07:53.904127 - OK: C:/Users/Admin/Desktop/cdfr054.P08.txt -> C:/Users/Admin/Desktop/Relatorios\cdfr054.P08_20260319_120753.csv | Formato: cdfr054 | Registros: 87
+2026-03-19T12:08:06.919999 - Logo inválido ou não suportado: 
+2026-03-19T12:10:50.952140 - Falha no logo; fallback gerado: 
+2026-03-19T13:07:14.142424 - Falha no logo; fallback gerado: 
+2026-03-19T13:09:10.693368 - Falha no logo; nenhum logo carregado: 
+2026-03-19T13:12:22.535965 - Falha no logo; nenhum logo carregado: error reading color map
+2026-03-19T13:15:00.566910 - Logo carregado: C:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19T13:20:24.621248 - Logo carregado: C:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19T13:21:45.782730 - Logo carregado: C:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19T13:25:03.270691 - Logo carregado: C:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19T13:26:57.403933 - Logo carregado: C:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19T13:28:31.211004 - Logo carregado: C:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19T13:34:03.611235 - Logo carregado: C:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19T13:38:32.589396 - Logo carregado: C:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19T13:38:41.727038 - Logo carregado: C:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19T13:42:03.566392 - Logo carregado: C:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19T14:08:09.340784 - Logo carregado: C:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19 14:15:11,591 - INFO - Test log message
+2026-03-19 14:31:23,164 - INFO - License saved for machine: 3CB5E14F2B01D229
+2026-03-19 14:37:20,838 - INFO - Logo loaded: c:\Users\Admin\Desktop\normalizar\logo.png
+2026-03-19 14:37:20,861 - INFO - Application started - Conversor TOTVS v1.1.0
+2026-03-19 14:37:26,222 - INFO - Application closed
+2026-03-19 15:02:22,441 - INFO - License check: VALID - Licença válida. Emitida em 19/03/2026
+2026-03-19 15:03:55,622 - INFO - License check: VALID - Licença válida. Emitida em 19/03/2026
+2026-03-19 15:03:55,747 - INFO - Application started - Conversor TOTVS v1.1.0
+2026-03-19 15:03:55,747 - INFO - Checking for updates. Current version: 1.1.0
+2026-03-19 15:03:55,748 - INFO - Update available: 1.2.0
+2026-03-19 15:05:07,458 - INFO - Application closed
+2026-03-19 15:05:43,421 - INFO - License check: VALID - Licença válida. Emitida em 19/03/2026
+2026-03-19 15:05:43,583 - INFO - Checking for updates. Current version: 1.1.0
+2026-03-19 15:05:43,583 - INFO - Application started - Conversor TOTVS v1.1.0
+2026-03-19 15:05:43,583 - INFO - Update available: 1.2.0
+2026-03-19 15:06:04,960 - INFO - Application closed
+2026-03-19 15:06:19,040 - INFO - License check: VALID - Licença válida. Emitida em 19/03/2026
+2026-03-19 15:06:19,202 - INFO - Checking for updates. Current version: 1.1.0
+2026-03-19 15:06:19,202 - INFO - Application started - Conversor TOTVS v1.1.0
+2026-03-19 15:06:19,203 - INFO - Update available: 1.2.0
+2026-03-19 15:06:31,313 - INFO - OK: C:/Users/Admin/Desktop/cdfr054.P08.txt -> C:/Users/Admin/Desktop/Relatorios\cdfr054.P08_20260319_150631.csv | Formato: cdfr054 | Registros: 87
+2026-03-19 15:06:31,335 - INFO - OK: C:/Users/Admin/Desktop/gerr004.P00 contagem.txt -> C:/Users/Admin/Desktop/Relatorios\gerr004.P00 contagem_20260319_150631.csv | Formato: gerr004 | Registros: 25
+2026-03-19 15:06:50,247 - INFO - OK: C:/Users/Admin/Desktop/cdfr054.P08.txt -> C:/Users/Admin/Desktop/Relatorios\cdfr054.P08_20260319_150650.csv | Formato: cdfr054 | Registros: 87
+2026-03-19 15:06:50,277 - INFO - OK: C:/Users/Admin/Desktop/gerr004.P00 contagem.txt -> C:/Users/Admin/Desktop/Relatorios\gerr004.P00 contagem_20260319_150650.csv | Formato: gerr004 | Registros: 25
+2026-03-19 15:06:55,512 - INFO - Application closed
