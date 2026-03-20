@@ -1,0 +1,198 @@
+ 003/   -FA MTZ - MODA                        CDFR054 - Relatorio de Movimentacao de O.P. com Valoracao por Servico
+ Parametro de
+
+            Local      Grupo                                                        Qt. produzida Vl. unitario Vl. total
+
+
+ Servico
+ 21          CORTE
+                     4 7200527E                    CAMISETA POLO MC MASC MONT LONG         48,000       2,5000     120,0000
+                                                   C/ BOLSO
+                     4 7200527                     CAMISETA POLO MC MASC MONT LONG         95,000       2,5000     237,5000
+                                                   C/ BOLSO
+                     4 7200427                     CAMISETA POLO MC MASC MONT LONG        126,000       2,5000     315,0000
+                                                   C/ BOLSO
+                     4 7200327                     CAMISETA POLO MC MASC +QD+ C/           71,000       2,5000     177,5000
+                                                   BORDADO
+                     4 UN391                       CAMISETA POLO MC MOTORISTAS FA         174,000       2,2000     382,8000
+                                                   PV MESCLA
+                     4 C525110                     CALCA SLIM MASC CVTO JEANS              30,000       3,7000     111,0000
+                     4 C525329                     CAMISETA REGULAR MASC CVTO  COM         30,000       2,4000      72,0000
+                                                   ESTAMPA
+                     4 515722D                     JAQUETA BOMBER MASC DULLIUS            141,000       7,2000   1.015,2000
+                                                   SARJA RESIN
+                     4 515422D                     CAMISETA POLO SLIM MC MASC             140,000       2,3000     322,0000
+                                                   CVTO(DULLIUS
+                     4 C525106                     CALCA SLIM MASC CVTO JEANS              30,000       3,7000     111,0000
+                                                   BORDADA
+                     4 C525141                     CALCA REGULAR MASC CVTO JEANS           30,000       3,7000     111,0000
+                                                   BORDADA
+                     4 C525406                     CAMISETA POLO REGULAR MC MASC           30,000       2,4000      72,0000
+                                                   CVTO
+                     4 C525328                     CAMISETA REGULAR MC MOLETOM             30,000       3,0000      90,0000
+                                                   CAPUZ
+                     4 C525317                     CAMISETA REGULAR MC MASC CVTO           30,000       2,4000      72,0000
+                                                   TEXTURIZAD
+                     4 C525258                     SHORTS MASC CVTO COM ELASTICO           32,000       3,4000     108,8000
+                     4 C525255                     SHORTS MASC CVTO VISOLINHO              32,000       3,4000     108,8000
+                     4 C525185                     CALCA CHINO SLIM MASC CVTO              34,000       3,7000     125,8000
+                                                   FIVELA AJUSTE
+                     4 C525366                     CAMISETA REGATA MASC CVTO TRICOT        30,000       2,4000      72,0000
+                     4 C525321                     CAMISETA REGULAR MC MASC CVTO           30,000       2,4000      72,0000
+                                                   TRICOT
+                     4 C525325                     CAMISETA SLIM MC MASC CVTO              30,000       2,4000      72,0000
+                                                   HENLEY
+                     4 C525301                     CAMISETA SLIM MC MASC CVTO              30,000       2,4000      72,0000
+                                                   LISTRADA
+                     4 C525306                     CAMISETA SLIM MC MASC CVTO              32,000       2,4000      76,8000
+                     4 C525310                     CAMISETA SLIM MC MASC CVTO              30,000       2,4000      72,0000
+                                                   TEXTURA
+                     4 C525324                     CAMISETA REGULAR MC MASC CVTO           32,000       2,4000      76,8000
+                                                   TRICOT
+                     4 C525316                     CAMISETA REGULAR MC MASC CVTO           30,000       2,4000      72,0000
+                                                   TRICTO
+                     4 C525410                     CAMISETA POLO REGULAR MC MASC           30,000       2,4000      72,0000
+                                                   CVTO ZIPER
+                     4 C525413                     CAMISETA POLO REGULAR MC MASC           30,000       2,4000      72,0000
+                                                   CVTO
+                     4 C525404                     CAMISETA POLO SLIM  MC MASC             32,000       2,4000      76,8000
+                                                   CVTO TEXTURA
+                     4 C525407                     CAMISETA POLO REGULAR MC MASC           30,000       2,4000      72,0000
+                                                   CVTO LIST
+                     4 C525418                     CAMISETA POLO REGULAR MC MASC           30,000       2,4000      72,0000
+                                                   CVTO BORD
+
+ Data Sistema  19/03/2026
+ Data/Hora     19/03/2026 10:39:33                                                                           Pagina       1
+ 003/   -FA MTZ - MODA                        CDFR054 - Relatorio de Movimentacao de O.P. com Valoracao por Servico
+ Parametro de
+
+            Local      Grupo                                                        Qt. produzida Vl. unitario Vl. total
+
+                     4 C525416                     CAMISETA POLO SLIM MC MASC CVTO         30,000       2,4000      72,0000
+                                                   TRICOT
+                     4 C525414                     CAMISETA POLO SLIM MC MASC CVTO         32,000       2,4000      76,8000
+                                                   TRICOT
+                     4 C525409                     CAMISETA POLO SLIM MC MASC CVTO         30,000       2,4000      72,0000
+                                                   ZIPER
+                     4 C525417                     CAMISETA POLO REGULAR MC MASC           30,000       2,4000      72,0000
+                                                   CVTO TRICO
+                     4 C525542                     CAMISA MC SLIM MASC CVTO BORDADA        30,000       3,9000     117,0000
+                     4 C515749                     CASACO MASC CVTO TRANSPASSADO           30,000       7,7000     231,0000
+                                                   PONTO ROMA
+                     4 C515616                     SUETER ML MASC CVTO GOLA POLO          136,000       2,3000     312,8000
+                                                   TEXTURA
+                     4 C515613                     SUETER ML MASC CVTO TRICOT              80,000       2,3000     184,0000
+                     4 C515611                     SUETER ML MASC CVTO CANELADO            85,000       2,3000     195,5000
+                                                   GOLA ALTA
+                     4 C515751                     JAQUETA MASC CVTO BOMBER TEXTURA       131,000       6,0000     786,0000
+                     4 C515750                     JAQUETA MASC CVTO PONTO ROMA            76,000       6,0000     456,0000
+                                                   COM BOLSOS
+                     4 C515748                     JAQUETA MASC CVTO MOLETOM              104,000       7,2000     748,8000
+                     4 C515734                     JAQUETA MASC CVTO BOMBER MALHA          50,000       4,8000     240,0000
+                     4 C515731                     JAQUETA MASC CVTO MALHA COM            180,000       7,2000   1.296,0000
+                                                   ZIPER
+                     4 C515723                     JAQUETA MASC CVTO MOLETOM              172,000       7,2000   1.238,4000
+                                                   JACQUARD TEXTU
+                     4 C515721                     JAQUETA BOMBER MASC CVTO MOLETOM        47,000       7,2000     338,4000
+                     4 C515720                     JAQUETA BOMBER MASC CVTO SUEDE          13,000       7,2000      93,6000
+                     4 C515513                     CAMISA SLIM ML MASC CVTO BORDADA        22,000       4,0000      88,0000
+                     4 C515509                     CAMISA SLIM ML MASC CVTO BORDADA        20,000       4,0000      80,0000
+                     4 C515502                     CAMISA SLIM ML MASC CVTO BORDADA        48,000       4,0000     192,0000
+                     4 C515425                     CAMISETA POLO SLIM MC MASC CVTO         94,000       2,3000     216,2000
+                                                   DEC V
+                     4 C515420                     CAMISETA POLO REGULAR MC MASC           56,000       2,3000     128,8000
+                                                   CVTO ZIPER
+                     4 C515417                     CAMISETA POLO REGULAR MC MASC          143,000       2,3000     328,9000
+                                                   CVTO TRIC
+                     4 C515411                     CAMISETA POLO REGULAR MC MASC           72,000       2,3000     165,6000
+                                                   CVTO PIQUE
+                     4 C515410                     CAMISETA POLO REGULAR MC MASC           66,000       2,3000     151,8000
+                                                   CVTO PIQUE
+                     4 C515327                     CAMISETA REGULAR MC MASC CVTO          199,000       2,3000     457,7000
+                                                   TRICOT
+                     4 C515324                     CAMISETA SLIM MC MASC CVTO             101,000       2,3000     232,3000
+                     4 C515310                     CAMISETA REGULAR MC MASC CVTO          105,000       2,3000     241,5000
+                                                   COM ESTAMP
+                     4 C515302                     CAMISETA SLIM MC MASC CVTO GOLA         72,000       2,3000     165,6000
+                                                   ALTA CAN
+                     4 C515195                     CALCA CHINO SLIM MASC CVTO MALHA       178,000       3,5000     623,0000
+                     4 C515179                     CALCA CHINO SLIM MASC CVTO             139,000       3,5000     486,5000
+                                                   AJUSTAVEL PON
+                     4 C515147                     CALCA REGULAR MASC CVTO JEANS           29,000       3,5000     101,5000
+                                                   COM FILIGR
+                     4 C515140                     CALCA REGULAR MASC CVTO JEANS           83,000       3,5000     290,5000
+                                                   COM FILIGR
+                     4 C515139                     CALCA REGULAR MAS CVTO JEANS           105,000       3,5000     367,5000
+                                                   COM FILIGRA
+                     4 C515138                     CALCA REGULAR MASC CVTO JEANS           93,000       3,5000     325,5000
+                                                   COM BORDAD
+
+ Data Sistema  19/03/2026
+ Data/Hora     19/03/2026 10:39:33                                                                           Pagina       2
+ 003/   -FA MTZ - MODA                        CDFR054 - Relatorio de Movimentacao de O.P. com Valoracao por Servico
+ Parametro de
+
+            Local      Grupo                                                        Qt. produzida Vl. unitario Vl. total
+
+                     4 C515119                     CALCA SLIM MASC CVTO COM                30,000       3,5000     105,0000
+                                                   FILIGRANA
+                     4 C515108                     CALCA SLIM MASC CVTO JEANS COM         162,000       3,5000     567,0000
+                                                   FILIGRANA
+                     4 C81893                      CAMISETA ML MASC CVTO CANELADA         248,000       2,3000     570,4000
+                                                   BASICA
+                     4 C81813                      CAMISA REGULAR ML MASC CVTO            154,000       3,0000     462,0000
+                                                   GOLA ESTRUTU
+                     4 C81557                      CAMISETA POLO REGULAR MASC CVTO        157,000       2,3000     361,1000
+                                                   BOLSO BA
+                     4 C505404                     CAMISETA POLO SLIM PIMA MC MASC        150,000       2,3000     345,0000
+                                                   CVTO
+                     4 C505308                     CAMISETA REGULAR INTERLOQUE             90,000       2,3000     207,0000
+                                                   PIMA MC MASC
+                     4 C81879                      CAMISETA POLO SLIM MC MASC CVTO        261,000       2,3000     600,3000
+                                                   PIMA BAS
+                     4 C81181                      CALCA SKINNY CHINO MASC CVTO           436,000       3,2000   1.395,2000
+                                                   BASIC
+                     4 7239025                     CALCA REGULAR ESPORTE FINO              80,000       2,5000     200,0000
+                                                   36-48 +QD+
+                     4 C81895                      CAMISETA SLIM MC MASC CVTO PIMA        640,000       2,3000   1.472,0000
+                                                   BASICA
+                     4 7239424                     CALCA REGULAR MASC JEANS STONE          45,000       2,4000     108,0000
+                                                   36-48 +QD
+                     4 C81725N                     CALCA MOLETON MASC CVTO ORIGINAL        59,000       2,6000     153,4000
+                     4 C81735N                     BLUSA MOLETOM MASC CVTO COM             85,000       2,8000     238,0000
+                                                   CAPUZ BASICO
+                     4 7214321                     CALCA REGULAR MASCULINA BORDA           40,000       2,6000     104,0000
+                                                   36-48 +QD+
+                     4 7239022                     CALCA MASC TAILOR C/ ELASTANO          185,000       2,5000     462,5000
+                                                   36-48 +QD+
+                     4 7203921                     CALCA JEANS MASC +QD+ 36-48             60,000       2,4000     144,0000
+                     4 151524E                     CAMISETA ML PV COR EG-EGG MIRAGE        50,000       1,8000      90,0000
+                     4 C81701                      CALCA MASC CVTO SLIM LYCRA BCO         174,000       2,9000     504,6000
+                                                   E PTO BOR
+                     4 16754                       561 CAMISETA ML PV BRANCA P-GG          70,000       1,8000     126,0000
+                                                   MIRAGE
+                     4 15152                       859 CAMISETA ML PV COR P-GG            220,000       1,8000     396,0000
+                                                   MIRAGE
+                     4 14666                       821 CAMISETA MC PV BRANCA              370,000       1,5000     555,0000
+                                                   S/LOG P-G MIR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Data Sistema  19/03/2026
+ Data/Hora     19/03/2026 10:39:33                                                                           Pagina       3

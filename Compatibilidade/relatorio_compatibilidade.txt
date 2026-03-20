@@ -1,0 +1,18 @@
+RELATÓRIO DE COMPATIBILIDADE - CONVERSOR TOTVS
+==================================================
+
+Arquivo: gerr004.P00 contagem.txt
+Status: SUCCESS
+Registros: 25
+Formato: gerr004
+------------------------------
+Arquivo: cdfr054.P08.txt
+Status: SUCCESS
+Registros: 87
+Formato: cdfr054
+------------------------------
+Arquivo: cdfr054.P06.txt
+Status: SUCCESS
+Registros: 975
+Formato: cdfr054
+------------------------------
