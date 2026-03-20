@@ -64,3 +64,12 @@
 2026-03-20 10:08:30,121 - INFO - Update available: 1.2.0
 2026-03-20 10:08:42,551 - INFO - Application closed
 2026-03-20 10:17:13,292 - INFO - JSON Parser available: True
+2026-03-20 13:34:24,155 - INFO - License check: VALID - Licença válida. Emitida em 19/03/2026
+2026-03-20 13:34:24,368 - INFO - JSON Parser available: True
+2026-03-20 13:34:24,423 - INFO - Application started - Conversor TOTVS v2.0.0
+2026-03-20 13:34:24,423 - INFO - Checking for updates. Current version: 2.0.0
+2026-03-20 13:34:24,953 - INFO - Application is up to date
+2026-03-20 13:34:47,602 - INFO - Convertido com sucesso: cdfr054.P06.txt → cdfr054.P06_cdfr054.csv (975 registros)
+2026-03-20 13:34:47,631 - INFO - Convertido com sucesso: cdfr054.P08.txt → cdfr054.P08_cdfr054.csv (87 registros)
+2026-03-20 13:34:47,641 - INFO - Convertido com sucesso: gerr004.P00 contagem.txt → gerr004.P00 contagem_gerr004.csv (25 registros)
+2026-03-20 13:34:53,737 - INFO - Application closed

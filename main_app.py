@@ -18,6 +18,7 @@ from exceptions import ConversionError
 from converter_engine import BatchConverter
 from ui_components import (StyleManager, HeaderFrame, FooterFrame, FileSelectionFrame,
                           FileListFrame, ButtonPanelFrame, StatusFrame)
+from update_checker import check_for_updates, install_update
 
 # Drag-and-drop support
 try:
@@ -45,6 +46,7 @@ class ConversorApp:
         
         self._setup_ui()
         self._setup_drag_drop()
+        self._check_for_updates()
         self._log_app_start()
     
     def _create_root(self) -> tk.Tk:
@@ -303,6 +305,53 @@ class ConversorApp:
     def _log_app_close(self):
         """Log application close"""
         self.logger.log_app_close()
+    
+    def _check_for_updates(self):
+        """Check for updates in background"""
+        def check_updates_bg():
+            try:
+                update_available, release_info = check_for_updates()
+                if update_available and release_info:
+                    latest_version = release_info.get('tag_name', '').lstrip('v')
+                    self.root.after(0, lambda: self._show_update_dialog(release_info))
+            except Exception as e:
+                print(f"Update check failed: {e}")
+        
+        # Run update check in background
+        threading.Thread(target=check_updates_bg, daemon=True).start()
+    
+    def _show_update_dialog(self, release_info):
+        """Show update dialog to user"""
+        try:
+            latest_version = release_info.get('tag_name', '').lstrip('v')
+            release_notes = release_info.get('body', 'Nova versão disponível com melhorias e correções.')
+            
+            result = messagebox.askyesno(
+                "Atualização Disponível",
+                f"Nova versão {latest_version} disponível!\n\n"
+                f"Novidades:\n{release_notes}\n\n"
+                "Deseja atualizar agora?"
+            )
+            
+            if result:
+                self._install_update(release_info)
+                
+        except Exception as e:
+            print(f"Update dialog failed: {e}")
+    
+    def _install_update(self, release_info):
+        """Install update"""
+        try:
+            success, message = install_update(release_info)
+            
+            if success:
+                messagebox.showinfo("Atualização", message)
+                self.root.quit()
+            else:
+                messagebox.showerror("Erro na Atualização", message)
+                
+        except Exception as e:
+            messagebox.showerror("Erro na Atualização", f"Falha na atualização: {e}")
     
     def run(self):
         """Run the application"""

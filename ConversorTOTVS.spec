@@ -2,10 +2,10 @@
 
 
 a = Analysis(
-    ['app_clean_professional.py'],
+    ['app\\main.py'],
     pathex=[],
     binaries=[],
-    datas=[('logo.png', '.'), ('license.txt', '.'), ('formats_config.json', '.')],
+    datas=[],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
