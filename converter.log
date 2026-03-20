@@ -53,3 +53,14 @@
 2026-03-19 15:06:50,247 - INFO - OK: C:/Users/Admin/Desktop/cdfr054.P08.txt -> C:/Users/Admin/Desktop/Relatorios\cdfr054.P08_20260319_150650.csv | Formato: cdfr054 | Registros: 87
 2026-03-19 15:06:50,277 - INFO - OK: C:/Users/Admin/Desktop/gerr004.P00 contagem.txt -> C:/Users/Admin/Desktop/Relatorios\gerr004.P00 contagem_20260319_150650.csv | Formato: gerr004 | Registros: 25
 2026-03-19 15:06:55,512 - INFO - Application closed
+2026-03-20 10:06:13,594 - INFO - License check: VALID - Licença válida. Emitida em 19/03/2026
+2026-03-20 10:06:14,258 - INFO - Checking for updates. Current version: 1.0.0
+2026-03-20 10:06:14,258 - INFO - Application started - Conversor TOTVS v1.0.0
+2026-03-20 10:06:14,259 - INFO - Update available: 1.2.0
+2026-03-20 10:06:41,799 - INFO - Application closed
+2026-03-20 10:08:29,945 - INFO - License check: VALID - Licença válida. Emitida em 19/03/2026
+2026-03-20 10:08:30,120 - INFO - Checking for updates. Current version: 1.0.0
+2026-03-20 10:08:30,120 - INFO - Application started - Conversor TOTVS v1.0.0
+2026-03-20 10:08:30,121 - INFO - Update available: 1.2.0
+2026-03-20 10:08:42,551 - INFO - Application closed
+2026-03-20 10:17:13,292 - INFO - JSON Parser available: True

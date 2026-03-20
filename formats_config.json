@@ -1,0 +1,40 @@
+{
+  "formats": {
+    "gerr004": {
+      "pattern": "gerr004\\.P\\d{2}\\.(txt|TXT)$",
+      "content_pattern": "GERR004|\\bUN\\b",
+      "description": "Formato GERR004 - Produtos com código de barras",
+      "record_pattern": "^\\s*(\\d+)\\s+(\\d+)\\s+(.*?)\\s+UN\\s+(\\d+)\\s+([\\d,]+)",
+      "field_mapping": {
+        "seq": 1,
+        "codigo_produto": 2,
+        "descricao": 3,
+        "codigo_barras": 4,
+        "quantidade": 5
+      },
+      "multiline_description": true,
+      "multiline_pattern": "^\\s*\\d+\\s+\\d+",
+      "number_fields": ["quantidade"],
+      "csv_headers": ["seq", "codigo_produto", "descricao", "codigo_barras", "quantidade"]
+    },
+    "cdfr054": {
+      "pattern": "cdfr054\\.P\\d{2}\\.(txt|TXT)$",
+      "content_pattern": "CDFR054",
+      "description": "Formato CDFR054 - Produtos com valores",
+      "record_pattern": "^\\s*(\\d+)\\s+([^\\s]+)\\s+(.+?)\\s+([\\d.,]+)\\s+([\\d.,]+)\\s+([\\d.,]+)\\s*$",
+      "field_mapping": {
+        "seq": 1,
+        "codigo_produto": 2,
+        "descricao": 3,
+        "quantidade": 4,
+        "valor_unitario": 5,
+        "valor_total": 6
+      },
+      "multiline_description": true,
+      "multiline_pattern": "^(\\s*\\d+\\s+[^\\s]+\\s+.+?\\s+[\\d.,]+\\s+[\\d.,]+\\s+[\\d.,]+)",
+      "multiline_stop_patterns": ["^DATA SISTEMA", "^DATA/HORA", "^PAGINA"],
+      "number_fields": ["quantidade", "valor_unitario", "valor_total"],
+      "csv_headers": ["seq", "codigo_produto", "descricao", "quantidade", "valor_unitario", "valor_total"]
+    }
+  }
+}

@@ -22,7 +22,7 @@ from services.update_service import get_update_service, check_updates
 from ui.dialogs import UpdateDialog, LicenseDialog, ProgressDialog
 from ui.ui_components_simple import (StyleManager, HeaderFrame, FooterFrame, FileSelectionFrame,
                                        FileListFrame, ButtonPanelFrame, StatusFrame)
-from core.converter_engine import BatchConverter
+from core.enhanced_converter import BatchConverter
 
 # Drag-and-drop support
 try:
@@ -99,14 +99,71 @@ class ConversorApp:
         
         return root
     
+    def _create_menu(self):
+        """Create application menu bar"""
+        menubar = tk.Menu(self.root)
+        self.root.config(menu=menubar)
+        
+        # Help menu
+        help_menu = tk.Menu(menubar, tearoff=0)
+        menubar.add_cascade(label="Ajuda", menu=help_menu)
+        help_menu.add_command(label="Verificar Atualizações", command=self._manual_update_check)
+        help_menu.add_separator()
+        help_menu.add_command(label="Sobre", command=self._show_about)
+    
+    def _manual_update_check(self):
+        """Manually check for updates"""
+        self.header.set_update_status("Verificando atualizações...", "orange")
+        self.root.update_idletasks()
+        
+        def check_bg():
+            try:
+                update_available, release_info = check_updates()
+                self.root.after(0, lambda: self._handle_update_result(update_available, release_info))
+            except Exception as e:
+                self.logger.error(f"Manual update check failed: {e}")
+                self.root.after(0, lambda: self.header.set_update_status("Erro ao verificar", "red"))
+        
+        threading.Thread(target=check_bg, daemon=True).start()
+    
+    def _handle_update_result(self, update_available, release_info):
+        """Handle update check result"""
+        if update_available and release_info:
+            latest_version = release_info.get('tag_name', '').lstrip('v')
+            self.header.set_update_status(f"Atualização disponível: v{latest_version}", "green")
+            self._show_update_dialog(release_info)
+        else:
+            self.header.set_update_status("Aplicativo atualizado", "green")
+    
+    def _show_about(self):
+        """Show about dialog"""
+        from datetime import datetime
+        current_year = datetime.now().year
+        
+        about_text = f"""{self.config.get('APP_NAME')} v{self.config.get('VERSION')}
+
+Desenvolvido por: {self.config.get('APP_AUTHOR')}
+Empresa: {self.config.get('COMPANY_NAME')}
+
+© {current_year} {self.config.get('COMPANY_NAME')}
+Todos os direitos reservados.
+
+Conversor de arquivos TXT para CSV
+Formatos suportados: {', '.join(self.config.get('SUPPORTED_FORMATS'))}"""
+        
+        messagebox.showinfo("Sobre", about_text)
+    
     def _setup_ui(self):
         """Setup user interface"""
         # Configure styles
         StyleManager.configure_styles()
         
+        # Create menu bar
+        self._create_menu()
+        
         # Header
-        header = HeaderFrame(self.root)
-        header.pack(fill='x', padx=10, pady=8)
+        self.header = HeaderFrame(self.root)
+        self.header.pack(fill='x', padx=10, pady=8)
         
         # File selection frame
         self.file_selection = FileSelectionFrame(self.root)
@@ -194,16 +251,22 @@ class ConversorApp:
     def _check_for_updates(self):
         """Check for updates in background"""
         if not self.config.get('AUTO_UPDATE_ENABLED', True):
+            self.header.set_update_status("Atualizações desativadas", "gray")
             return
         
         def check_updates_bg():
             try:
                 update_available, release_info = check_updates()
                 if update_available and release_info:
+                    latest_version = release_info.get('tag_name', '').lstrip('v')
+                    self.root.after(0, lambda: self.header.set_update_status(f"Atualização disponível: v{latest_version}", "green"))
                     # Show update dialog in main thread
-                    self.root.after(0, lambda: self._show_update_dialog(release_info))
+                    self.root.after(1000, lambda: self._show_update_dialog(release_info))
+                else:
+                    self.root.after(0, lambda: self.header.set_update_status("Aplicativo atualizado", "green"))
             except Exception as e:
                 self.logger.error(f"Update check failed: {e}")
+                self.root.after(0, lambda: self.header.set_update_status("Erro ao verificar atualizações", "red"))
         
         # Run update check in background
         threading.Thread(target=check_updates_bg, daemon=True).start()

@@ -14,6 +14,13 @@ from .exceptions import ConversionError, UnsupportedFormatError, FileProcessingE
 from utils.config_service import get_config
 from utils.logger import get_logger
 
+# Import JSON-based parser
+try:
+    from core.json_parser import get_configurable_factory, ConfigurableFormatDetector
+    JSON_PARSER_AVAILABLE = True
+except ImportError:
+    JSON_PARSER_AVAILABLE = False
+
 
 class ConversionEngine:
     """Main conversion engine"""
@@ -21,6 +28,10 @@ class ConversionEngine:
     def __init__(self):
         self.config = get_config()
         self.logger = get_logger(__name__)
+        
+        # Initialize JSON parser if available
+        self.json_factory = get_configurable_factory() if JSON_PARSER_AVAILABLE else None
+        self.json_detector = ConfigurableFormatDetector() if JSON_PARSER_AVAILABLE else None
     
     def convert_file(self, input_file: str, output_dir: str, 
                     progress_callback: Optional[Callable] = None) -> Tuple[str, str, int, str]:
@@ -39,21 +50,14 @@ class ConversionEngine:
         if not os.path.isfile(input_file):
             raise FileProcessingError(input_file, "File not found")
         
-        # Detect format
-        format_type = FormatDetector.detect_format(input_file)
-        fallback_message = ''
-        supported_formats = self.config.get('SUPPORTED_FORMATS')
+        # Detect format (try JSON parser first, then fallback to original)
+        format_type = self._detect_format(input_file)
         
-        if format_type not in supported_formats:
-            # Try parsing with all available parsers
-            format_type, records = self._try_parse_with_all_parsers(input_file, progress_callback)
-            if format_type:
-                fallback_message = f"Formato detectado por parser: {format_type}."
-            else:
-                raise UnsupportedFormatError(format_type or "unknown", supported_formats)
-        else:
-            # Read file and parse with detected format
-            records = self._parse_file(input_file, format_type, progress_callback)
+        if not format_type:
+            raise UnsupportedFormatError("unknown", self.config.get('SUPPORTED_FORMATS'))
+        
+        # Read file and parse with detected format
+        records = self._parse_file(input_file, format_type, progress_callback)
         
         # Generate output path
         output_path = self._generate_output_path(input_file, output_dir)
@@ -70,13 +74,13 @@ class ConversionEngine:
         # Log success
         self.logger.log_conversion_success(input_file, output_path, format_type, len(records))
         
-        return output_path, format_type, len(records), fallback_message
+        return output_path, format_type, len(records), ''
     
     def _try_parse_with_all_parsers(self, input_file: str, 
                                   progress_callback: Optional[Callable] = None) -> Tuple[Optional[str], List[Record]]:
         """Try all parsers on the file"""
         try:
-            with open(input_file, 'r', encoding=INPUT_ENCODING) as f:
+            with open(input_file, 'r', encoding=self.config.get('INPUT_ENCODING')) as f:
                 lines = f.readlines()
             
             return ParserFactory.try_parse_all(lines)
@@ -87,17 +91,59 @@ class ConversionEngine:
     def _parse_file(self, input_file: str, format_type: str, 
                    progress_callback: Optional[Callable] = None) -> List[Record]:
         """Parse file with specific format"""
+        # Try JSON parser first
+        if self.json_factory:
+            try:
+                parser = self.json_factory.create_parser(format_type)
+                return parser.parse(self._read_lines(input_file), progress_callback)
+            except Exception as e:
+                self.logger.debug(f"JSON parser failed for {format_type}: {e}")
+        
+        # Fallback to original parser
         try:
-            with open(input_file, 'r', encoding=self.config.get('INPUT_ENCODING')) as f:
-                lines = f.readlines()
-            
             parser = ParserFactory.create_parser(format_type)
-            return parser.parse(lines, progress_callback)
-            
-        except UnicodeDecodeError as e:
-            raise FileProcessingError(input_file, f"Encoding error: {e}")
+            return parser.parse(self._read_lines(input_file), progress_callback)
         except Exception as e:
             raise FileProcessingError(input_file, f"Parsing error: {e}")
+    
+    def _detect_format(self, input_file: str) -> Optional[str]:
+        """Detect file format using available parsers"""
+        # Try JSON parser first
+        if self.json_detector:
+            try:
+                format_name = self.json_detector.detect_format(input_file)
+                if format_name:
+                    self.logger.debug(f"JSON parser detected format: {format_name}")
+                    return format_name
+            except Exception as e:
+                self.logger.debug(f"JSON parser failed: {e}")
+        
+        # Fallback to original parser
+        try:
+            format_name = FormatDetector.detect_format(input_file)
+            if format_name:
+                self.logger.debug(f"Original parser detected format: {format_name}")
+                return format_name
+        except Exception as e:
+            self.logger.debug(f"Original parser failed: {e}")
+        
+        return None
+    
+    def _read_lines(self, file_path: str) -> List[str]:
+        """Read file lines with proper encoding"""
+        try:
+            with open(file_path, 'r', encoding=self.config.get('INPUT_ENCODING')) as f:
+                return [line.rstrip('\n\r') for line in f if line.strip()]
+        except UnicodeDecodeError:
+            # Try alternative encodings
+            for encoding in ['utf-8', 'cp1252', 'latin1']:
+                try:
+                    with open(file_path, 'r', encoding=encoding) as f:
+                        return [line.rstrip('\n\r') for line in f if line.strip()]
+                except UnicodeDecodeError:
+                    continue
+            
+            raise FileProcessingError(file_path, "Could not read file with any supported encoding")
     
     def _generate_output_path(self, input_file: str, output_dir: str) -> str:
         """Generate output CSV file path"""

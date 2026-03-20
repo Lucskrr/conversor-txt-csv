@@ -116,6 +116,24 @@ class HeaderFrame(tk.Frame):
             bg=config.get('HEADER_BG_COLOR')
         )
         self.version_label.pack(anchor='w')
+        
+        # Update status
+        self.update_status_label = tk.Label(
+            self.title_frame,
+            text="Verificando atualizações...",
+            font=('Arial', 9),
+            fg='orange',
+            bg=config.get('HEADER_BG_COLOR')
+        )
+        self.update_status_label.pack(anchor='w')
+    
+    def set_update_status(self, text: str, color: str = 'black'):
+        """Set update status text with color"""
+        self.update_status_label.config(text=text, fg=color)
+    
+    def get_update_status_label(self):
+        """Get update status label reference"""
+        return self.update_status_label
 
 
 class FooterFrame(tk.Frame):

@@ -1,0 +1,82 @@
+{
+  "formats": {
+    "gerr004": {
+      "pattern": "gerr004\\.P\\d{2}\\.(txt|TXT)$",
+      "content_pattern": "GERR004|\\bUN\\b",
+      "description": "Formato GERR004 - Produtos com código de barras",
+      "record_pattern": "^\\s*(\\d+)\\s+(\\d+)\\s+(.*?)\\s+UN\\s+(\\d+)\\s+([\\d,]+)",
+      "field_mapping": {
+        "seq": 1,
+        "codigo_produto": 2,
+        "descricao": 3,
+        "codigo_barras": 4,
+        "quantidade": 5,
+        "valor_unitario": null,
+        "valor_total": null
+      },
+      "multiline_description": true,
+      "multiline_pattern": "^\\s*\\d+\\s+\\d+",
+      "number_fields": ["quantidade"],
+      "csv_headers": ["seq", "codigo_produto", "descricao", "codigo_barras", "quantidade", "valor_unitario", "valor_total"]
+    },
+    "cdfr054": {
+      "pattern": "cdfr054\\.P\\d{2}\\.(txt|TXT)$",
+      "content_pattern": "CDFR054",
+      "description": "Formato CDFR054 - Produtos com valores",
+      "record_pattern": "^\\s*(\\d+)\\s+([^\\s]+)\\s+(.+?)\\s+([\\d.,]+)\\s+([\\d.,]+)\\s+([\\d.,]+)\\s*$",
+      "field_mapping": {
+        "seq": 1,
+        "codigo_produto": 2,
+        "descricao": 3,
+        "codigo_barras": null,
+        "quantidade": 4,
+        "valor_unitario": 5,
+        "valor_total": 6
+      },
+      "multiline_description": true,
+      "multiline_pattern": "^(\\s*\\d+\\s+[^\\s]+\\s+.+?\\s+[\\d.,]+\\s+[\\d.,]+\\s+[\\d.,]+)",
+      "multiline_stop_patterns": ["^DATA SISTEMA", "^DATA/HORA", "^PAGINA"],
+      "number_fields": ["quantidade", "valor_unitario", "valor_total"],
+      "csv_headers": ["seq", "codigo_produto", "descricao", "codigo_barras", "quantidade", "valor_unitario", "valor_total"]
+    },
+    "exemplo_novo": {
+      "pattern": "novo_formato\\.P\\d{2}\\.(txt|TXT)$",
+      "content_pattern": "NOVO_FORMATO|PRODUTOS",
+      "description": "Exemplo de novo formato - Simples",
+      "record_pattern": "^\\s*(\\d+);([^;]+);([^;]+);([\\d,.]+);([\\d,.]+)$",
+      "field_mapping": {
+        "seq": 1,
+        "codigo_produto": 2,
+        "descricao": 3,
+        "codigo_barras": null,
+        "quantidade": 4,
+        "valor_unitario": 5,
+        "valor_total": null
+      },
+      "multiline_description": false,
+      "number_fields": ["quantidade", "valor_unitario"],
+      "csv_headers": ["seq", "codigo_produto", "descricao", "codigo_barras", "quantidade", "valor_unitario", "valor_total"]
+    },
+    "exemplo_complexo": {
+      "pattern": "complexo\\.\\d{6}\\.(txt|TXT)$",
+      "content_pattern": "RELATORIO|ESTOQUE",
+      "description": "Exemplo complexo - Múltiplos campos e validações",
+      "record_pattern": "^\\s*(\\d{6})\\s+(\\d{14})\\s+(.*?)\\s+(\\d{3})\\s+([A-Z]{2})\\s+([\\d.,]+)\\s+([\\d.,]+)\\s+([\\d.,]+)\\s+(\\d{2}/\\d{2}/\\d{4})",
+      "field_mapping": {
+        "seq": 1,
+        "codigo_produto": 2,
+        "descricao": 3,
+        "codigo_barras": 4,
+        "quantidade": 6,
+        "valor_unitario": 7,
+        "valor_total": 8,
+        "data": 9
+      },
+      "multiline_description": true,
+      "multiline_pattern": "^\\s*\\d{6}\\s+\\d{14}",
+      "multiline_stop_patterns": ["^TOTAL", "^SUBTOTAL", "^FIM"],
+      "number_fields": ["quantidade", "valor_unitario", "valor_total"],
+      "csv_headers": ["seq", "codigo_produto", "descricao", "codigo_barras", "quantidade", "valor_unitario", "valor_total"]
+    }
+  }
+}
