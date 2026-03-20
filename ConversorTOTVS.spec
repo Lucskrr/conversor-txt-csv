@@ -2,11 +2,11 @@
 
 
 a = Analysis(
-    ['converter.py'],
+    ['app_clean_professional.py'],
     pathex=[],
     binaries=[],
-    datas=[('logo.png', '.')],
-    hiddenimports=['tkinterdnd2', 'PIL', 'utils.logger', 'utils.config_service'],
+    datas=[('logo.png', '.'), ('license.txt', '.'), ('formats_config.json', '.')],
+    hiddenimports=[],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

@@ -70,5 +70,38 @@ venv.bak/
 ehthumbs.db
 Thumbs.db
 
-# Logs - REMOVIDO PARA PERMITIR LOGGING
-# converter.log
+# Project specific
+*.log
+converter.log
+
+# Release folders
+release*/
+release_debug*/
+release_fixed*/
+release_ultra_debug*/
+release_license_test*/
+release_update_test*/
+release_ultra_stable*/
+release_final*/
+
+# Test files
+test_*.py
+debug_*.py
+app_main_*.py
+build_*.py
+
+# Compatibilidade - não expor arquivos de clientes
+Compatibilidade/
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+
+# Build artifacts
+build/
+dist/
+
+# Documentation drafts
+*_DRAFT.md
+*_TEMP.md

@@ -27,8 +27,8 @@ class UpdateService:
         self.config = get_config()
         self.current_version = self.config.VERSION
         # ATENÇÃO: Substitua SEU-USUARIO pelo seu username do GitHub
-        self.version_url = "https://api.github.com/repos/famaringa/conversor-totvs/releases/latest"
-        self.download_base_url = "https://github.com/famaringa/conversor-totvs/releases/download"
+        self.version_url = "https://api.github.com/repos/Lucskrr/conversor-txt-csv/releases/latest"
+        self.download_base_url = "https://github.com/Lucskrr/conversor-txt-csv/releases/download"
         
     def check_for_updates(self) -> Tuple[bool, Optional[Dict[str, Any]]]:
         """

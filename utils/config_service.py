@@ -20,7 +20,7 @@ class ConfigService:
         
         # Application metadata
         config = {
-            'VERSION': '1.0.0',
+            'VERSION': '2.0.0',
             'APP_NAME': 'Conversor TOTVS',
             'APP_AUTHOR': 'Fa Maringa',
             'COMPANY_NAME': 'FA MARINGA LTDA',
